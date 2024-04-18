@@ -1,0 +1,28 @@
+.dashpad{
+    padding-inline-start: 225px;
+    display: flex;
+    justify-content: space-between;
+}
+.main-card{
+    background-color: rgb(7, 112, 112);
+    color: white !important;
+}
+.main-card1{
+    background-color: rgb(6, 121, 11);
+    color: white !important;
+}
+.main-card2{
+    background-color: rgb(140, 163, 11);
+    color: white !important;
+}
+.main-card3{
+    background-color: rgb(179, 67, 23);
+    color: white !important;
+}
+.link{
+    text-decoration: none !important;
+    color: black;
+    display: flex;
+    justify-content: center;
+    
+}

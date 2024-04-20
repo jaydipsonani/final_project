@@ -1,35 +1,57 @@
-import {React, useState} from "react";
+import { React } from "react";
 // import { Link } from "react-router-dom";
+import { useEffect, useState } from 'react';
 import './css/viewcourse.css';
+import axios from "axios";
+import { Button } from "react-bootstrap";
 
-function view_course(){
+function View_course() {
 
-    return(
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/course')
+            .then(function (response) {
+                setData(response.data.data);
+                console.log(response.data);
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+    })
+
+    return (
         <>
-        <div className="bg-white">
-        <h1 align="center" >view course</h1>
-        <form method="get">
-            <table width="100%" align="center" border="1">
-            <thead>  
-                <tr>
-                    <th>course name</th>
-                    <th>course fee</th>
-                    <th>Remove Data</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>fronted</td>
-                    <td>12000</td>
-                    <td><button>delete</button></td>
-                </tr>
+            <div className="bg-white">
+                <h1 align="center" >view course</h1>
+                <form method="get">
+                    <table width="100%" align="center" border="1">
+                        <thead>
+                            <tr>
+                                <th>course name</th>
+                                <th>course fee</th>
+                                <th>Remove Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                {
+                                    data.map((user, id) => {
+                                        return <> <td>{user.c_name}</td>
+                                            <td>{user.course_fee}</td>
+                                            <td><Button>delete</Button></td>
+                                        </>
+                                    })
+                                }
 
-                </tbody>
-            </table>
-        </form>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </form>
             </div>
         </>
     )
 }
 
-export default view_course
+export default View_course

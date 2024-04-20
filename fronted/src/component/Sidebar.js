@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Form, Button, Collapse } from 'react-bootstrap'
 import { AiOutlineSearch, AiFillFile } from "react-icons/ai";
 import './css/sidebar.css'
-import { FaTachometerAlt, FaChartPie, FaTree ,FaFile} from "react-icons/fa";
+import { FaTachometerAlt, FaChartPie, FaTree, FaFile } from "react-icons/fa";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { BsCircle } from "react-icons/bs";
 import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
@@ -13,15 +13,13 @@ import { Link } from 'react-router-dom';
 const Sidebar = () => {
 
   const [open, setOpen] = useState(false);
-  // const [open1, setOpen1] = useState(false);
-  // const [open2, setOpen2] = useState(false);
-  // const [open3, setOpen3] = useState(false);
-  const [open4, setOpen4] = useState(false);
-  const [open5, setOpen5] = useState(false);
+  const [open1, setOpen1] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const [open3, setOpen3] = useState(false);
 
   return (
     <>
-    {/* <Dashboard/> */}
+      {/* <Dashboard/> */}
       <div className='sidebar_scroll '>
         <ul className='bgcolorsidebar list-unstyled'>
           {/* ------------Logo-------------- */}
@@ -30,7 +28,7 @@ const Sidebar = () => {
           </li>
           {/* ------------Logo 2------------- */}
           <li className='border-bottom pt-3 pb-3'>
-          <Link to="/Dashboard"><img className='rounded-circle' src={require('../img/user2.jpg')} width='30px' /><span>Alexander Pierce</span></Link>
+            <Link to="/Dashboard"><img className='rounded-circle' src={require('../img/user2.jpg')} width='30px' /><span>Alexander Pierce</span></Link>
           </li>
           {/* ------------search------------- */}
           <li className='p-2'>
@@ -63,71 +61,55 @@ const Sidebar = () => {
               </ul>
             </Collapse>
           </li>
-          {/* ------------Widgets------------- */}
-          {/* <li className='list-unstyled text-start'>
+
+
+          <li>
             <Button
+              onClick={() => setOpen1(!open1)}
               variant="outline-secondary"
               aria-controls='example-collapse-text'
-              aria-expanded={open} className='text-start colorlayout btn1' >
+              aria-expanded={open1} className='text-start colorlayout btn1' >
 
-              <span className='outline-light'><BsFillGrid3X3GapFill className='me-3 fs-5'></BsFillGrid3X3GapFill>Widgets</span>
+              <span className=''><FaChartPie className='me-3 fs-5' ></FaChartPie>faculty<MdOutlineKeyboardArrowLeft className=''></MdOutlineKeyboardArrowLeft></span>
             </Button>
+            <Collapse in={open1}>
+              <ul id='example-collapse-text' className='list-unstyled ps-0 text-start'>
+              <li><Link to='/faculty'><BsCircle className='me-3 fs-6'></BsCircle>Add faculty</Link></li>
+              <li><Link to='/viewfaculty'><BsCircle className='me-3 fs-6'></BsCircle>view faculty</Link></li>
+              </ul>
+            </Collapse>
+          </li>
 
-          </li> */}
-
-          {/* <li>
+          <li>
             <Button
               onClick={() => setOpen2(!open2)}
               variant="outline-secondary"
               aria-controls='example-collapse-text'
               aria-expanded={open2} className='text-start colorlayout btn1' >
 
-              <span className=''><FaChartPie className='me-3 fs-5' ></FaChartPie>Charts<MdOutlineKeyboardArrowLeft className=''></MdOutlineKeyboardArrowLeft></span>
+              <span className=''><FaFile className='me-3 fs-5'></FaFile>course<MdOutlineKeyboardArrowLeft className=''></MdOutlineKeyboardArrowLeft></span>
             </Button>
             <Collapse in={open2}>
               <ul id='example-collapse-text' className='list-unstyled ps-0 text-start'>
-                <li><Link to='chart js'><BsCircle className='me-3 fs-6'></BsCircle>Chart JS</Link></li>
-                <li><Link to='flot'><BsCircle className='me-3 fs-6'></BsCircle>Flot</Link></li>
-                <li><Link to='inline'><BsCircle className='me-3 fs-6'></BsCircle>Inline</Link></li>
-                <li><Link to='uploat'><BsCircle className='me-3 fs-6'></BsCircle>uPlot</Link></li>
-              </ul>
-            </Collapse>
-          </li> */}
-
-          <li>
-            <Button
-              onClick={() => setOpen4(!open4)}
-              variant="outline-secondary"
-              aria-controls='example-collapse-text'
-              aria-expanded={open4} className='text-start colorlayout btn1' >
-
-              <span className=''><FaFile className='me-3 fs-5'></FaFile>Forms<MdOutlineKeyboardArrowLeft className=''></MdOutlineKeyboardArrowLeft></span>
-            </Button>
-            <Collapse in={open4}>
-              <ul id='example-collapse-text' className='list-unstyled ps-0 text-start'>
                 <li><Link to='/addcourse'><BsCircle className='me-3 fs-6'></BsCircle>Add Course</Link></li>
                 <li><Link to='/view'><BsCircle className='me-3 fs-6'></BsCircle>View Course</Link></li>
-                <li><Link to='/Admission'><BsCircle className='me-3 fs-6'></BsCircle>Admission</Link></li>
-                <li><Link to='/faculty'><BsCircle className='me-3 fs-6'></BsCircle>Add faculty</Link></li>
-                <li><Link ><BsCircle className='me-3 fs-6'></BsCircle>Validation</Link></li>
               </ul>
             </Collapse>
           </li>
           {/* ------------tables------------- */}
           <li>
             <Button
-              onClick={() => setOpen5(!open5)}
+              onClick={() => setOpen3(!open3)}
               variant="outline-secondary"
               aria-controls='example-collapse-text'
-              aria-expanded={open5} className='text-start colorlayout btn1' >
+              aria-expanded={open3} className='text-start colorlayout btn1' >
 
-              <span className='outline-light'><HiTable className='me-3 fs-5' ></HiTable>Tables<MdOutlineKeyboardArrowLeft className=''></MdOutlineKeyboardArrowLeft></span>
+              <span className='outline-light'><HiTable className='me-3 fs-5' ></HiTable>student<MdOutlineKeyboardArrowLeft className=''></MdOutlineKeyboardArrowLeft></span>
             </Button>
-            <Collapse in={open5}>
+            <Collapse in={open3}>
               <ul id='example-collapse-text' className='list-unstyled ps-0 text-start'>
-                <li><Link to='simple tables'><BsCircle className='me-3 fs-6'></BsCircle>Simple Tables</Link></li>
-                <li><Link to='datatables'><BsCircle className='me-3 fs-6'></BsCircle>DataTables</Link></li>
-                <li><Link to='jsgrid'><BsCircle className='me-3 fs-6'></BsCircle>jsGrid</Link></li>
+                <li><Link to='/Admission'><BsCircle className='me-3 fs-6'></BsCircle>Admission</Link></li>
+                <li><Link to='/viewstudent'><BsCircle className='me-3 fs-6'></BsCircle>view_student</Link></li>
               </ul>
             </Collapse>
           </li>

@@ -13,7 +13,7 @@ exports.add_faculty = async (req, res) => {
 exports.find_faculty = async (req, res) => {
     
     v_id = req.params.id
-    var data = await faculty.findById(v_id)
+    var data = await faculty.find()
 
     res.status(200).json({
         status: 'success',

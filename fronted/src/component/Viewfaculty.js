@@ -45,38 +45,6 @@ function ViewFaculty() {
     return (
 
         <>
-
-            {/* <div className="bg-white">
-                <h1 align="center" >view course</h1>
-                <form method="get">
-                    <table width="100%" align="center" border="1">
-                        <thead>
-                            <tr >
-                                <th>faculty name</th>
-                                <th>faculty department</th>
-                                <th>faculty time</th>
-                                <th>remove</th>
-                            </tr>
-                        </thead>
-                        <tbody width="100%">
-                            <tr>
-                                {
-                                    data.map((user, index) => {
-                                <hr />
-                                        return <> <td>{user.faculty_name}</td>
-                                            <td>{user.faculty_department}</td>
-                                            <td>{user.time}</td>
-                                            <td class="list-group-item"><Button onClick={(e) => handledelete(user._id, e)}>Delete</Button></td>
-                                        </>
-                                    })
-                                }
-                            </tr>
-
-                        </tbody>
-                    </table>
-                </form>
-            </div> */}
-
             <div className="bg-white">
                 <div className=' '>
                     <div className='d-flex justify-content-around'>
@@ -91,21 +59,21 @@ function ViewFaculty() {
 
                 <div className="container mt-5 ">
                     <div className="row">
-            {
-                data.map((user, index) => {
-                    return <div className="col-4 ">
-                        <div class="card w-75 m-1" >
-                            <ul class="list-group list-group-flush">
-                                <li class="list-group-item">Name :<span>{user.faculty_name}</span></li>
-                                <li class="list-group-item">Dapartment :<span>{user.faculty_department}</span></li>
-                                <li class="list-group-item">Time :<span>{user.time}</span></li>
-                                <li class="list-group-item"><Button onClick={(e) => handledelete(user._id, e)}>Delete</Button></li>
-                            </ul>
-                        </div>
+                        {
+                            data.map((user, index) => {
+                                return <div className="col-4 ">
+                                    <div class="card w-75 m-1" >
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">Name :<span>{user.faculty_name}</span></li>
+                                            <li class="list-group-item">Dapartment :<span>{user.faculty_department}</span></li>
+                                            <li class="list-group-item">Time :<span>{user.time}</span></li>
+                                            <li class="list-group-item"><Button onClick={(e) => handledelete(user._id, e)}>Delete</Button></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            })
+                        }
                     </div>
-                })
-            } 
-            </div>
                 </div>
             </div>
         </>

@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 function Viewstudent() {
     const [data, setData] = useState([]);
@@ -32,7 +33,18 @@ function Viewstudent() {
     }
 
     return (
-        <div>
+
+        <div className="bg-white">
+            <div className=' '>
+                <div className='d-flex justify-content-around'>
+                    <h3 className='pt-3 text-center fw-bold mx-auto'>student Data </h3>
+                    <Link to="/Dashboard" className=' pt-3 me-5'>
+                        <Button className='text-start btn btn-dark text-center'>
+                            <span className='fw-bold'>Dashboard</span>
+                        </Button>
+                    </Link>
+                </div>
+            </div>
             <div>
                 <table id='users' className='table'>
                     <thead>

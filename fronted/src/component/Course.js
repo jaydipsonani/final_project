@@ -9,6 +9,7 @@ function Add_course(){
 
 const navigate = useNavigate(' ')
 
+// let [hello, sethello] = useState('')
 let [course, setcourse] = useState('');
 let [fees, setfees] = useState('');
 let [error, setError] = useState('');

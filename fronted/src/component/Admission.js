@@ -184,7 +184,7 @@ function Add_student() {
               {/* Course name */}
               <div className="form-group mt-3 d-flex gap-3">
                 <label className="col-2 ">Courses :</label>
-                <select id="course" className="form-control" onChange={(e) => { setC_name(e.target.value) }}>
+                <select id="course" defaultValue="CCC" className="form-control" onChange={(e) => { setC_name(e.target.value) }}>
                   <option value={"CCC"}>CCC</option>
                   <option value={"Front End Development"}>Front End Development</option>
                   <option value={"Back End Delelopment"} >Back End Delelopment</option>

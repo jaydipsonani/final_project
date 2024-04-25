@@ -16,10 +16,7 @@ var studentSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: "content"
     },
-    course_start_date: {
-        type: Date,
-        default: Date.now()
-    },
+    course_start_date: { type: Date, default: Date.now() },
     pc_laptop: {
         type: String,
         default: "PC"

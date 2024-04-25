@@ -220,7 +220,6 @@ function Add_student() {
                   <Link onClick={btnsubmit} className='submit'>Submit</Link>
                 </button>
               </div>
-
             </div>
           </div>
         </div>

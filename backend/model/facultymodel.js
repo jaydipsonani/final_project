@@ -7,6 +7,9 @@ var facultySchema = new mongoose.Schema({
     faculty_department: {
         type: 'String',
     },
+    salary: {
+        type: 'String',
+    },
     time: {
         type: 'String',
     }

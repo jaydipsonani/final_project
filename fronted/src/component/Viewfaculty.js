@@ -67,6 +67,7 @@ function ViewFaculty() {
                                             <li class="list-group-item">Name :<span>{user.faculty_name}</span></li>
                                             <li class="list-group-item">Dapartment :<span>{user.faculty_department}</span></li>
                                             <li class="list-group-item">Time :<span>{user.time}</span></li>
+                                            <li class="list-group-item">Salary :<span>{user.salary}</span></li>
                                             <li class="list-group-item"><Button onClick={(e) => handledelete(user._id, e)}>Delete</Button></li>
                                         </ul>
                                     </div>

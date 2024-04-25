@@ -11,6 +11,7 @@ function Faculty() {
 
   let [faculty_name, setFaculty_name] = useState('');
   let [faculty_department, setFaculty_department] = useState('');
+  let [salary, setSalary] = useState('');
   let [time, setTime] = useState('');
 
   const btnHandler = () => {
@@ -18,6 +19,7 @@ function Faculty() {
 
       faculty_name: faculty_name,
       faculty_department: faculty_department,
+      salary: salary,
       time: time
     })
 
@@ -57,6 +59,16 @@ function Faculty() {
                 className="form-control mt-1"
                 placeholder="department"
                 onChange={(e) => { setFaculty_department(e.target.value) }}
+              />
+            </div>
+
+            <div className="form-group mt-3">
+              <label>department</label>
+              <input
+                type="integer"
+                className="form-control mt-1"
+                placeholder="department"
+                onChange={(e) => { setSalary(e.target.value) }}
               />
             </div>
 

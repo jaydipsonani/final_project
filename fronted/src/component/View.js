@@ -19,12 +19,28 @@ function View_course() {
             .catch(function (error) {
                 console.log(error);
             })
-    })
+    }, [])
+
+    const handledelete = (id, e) => {
+
+
+        axios.post(`http://localhost:5000/course/deletecourse/` + id)
+            .then((res) => {
+                console.log(res);
+                const d = data.filter(item => item._id !== id);
+                setData(d)
+            })
+            .catch(function (error) {
+
+                console.log(error);
+            })
+
+    }
 
     return (
         <>
             <div className="bg-white">
-            <div className=' '>
+                <div className=' '>
                     <div className='d-flex justify-content-around'>
                         <h3 className='pt-3 text-center fw-bold mx-auto'>Course Data </h3>
                         <Link to="/Dashboard" className=' pt-3 me-5'>
@@ -47,9 +63,21 @@ function View_course() {
                             <tr>
                                 {
                                     data.map((user, id) => {
-                                        return <> <td>{user.c_name}</td>
+                                        {/* return <> <td>{user.c_name}</td>
                                             <td>{user.content_id.content}</td>
                                             <td>{user.content_id.course_fee}</td>
+                                        </> */}
+                                        return <>
+                                            <div className="col-4 ">
+                                                <div class="card w-75 m-1" >
+                                                    <ul class="list-group list-group-flush">
+                                                        <li class="list-group-item">coursename :<span>{user.c_name}</span></li>
+                                                        <li class="list-group-item">fees :<span>{user.course_fee}</span></li>
+
+                                                        <li class="list-group-item"><Button onClick={(e) => handledelete(user._id, e)}>Delete</Button></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
                                         </>
                                     })
                                 }

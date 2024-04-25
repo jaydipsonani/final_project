@@ -1,13 +1,15 @@
 var mongoose = require('mongoose')
 
 // Schema
- 
+
 var registerSchema = new mongoose.Schema({
     name: {
-        type: String
+        type: String,
+        required: true
     },
     email: {
-        type: String
+        type: String,
+        required: true
     },
     password: {
         type: String

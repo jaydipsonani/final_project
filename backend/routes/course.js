@@ -6,6 +6,7 @@ var course = require('../controller/coursecontroller')
 
 router.post('/addcourse', course.add_course)
 router.get('/:id', course.select_course)
+router.get('/',course.view_course)
 router.post('/deletecourse/:id', course.delete_course)
 router.post('/updatecourse/:id', course.update_course)
 

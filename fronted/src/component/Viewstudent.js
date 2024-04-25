@@ -52,8 +52,8 @@ function Viewstudent() {
                         <tr className='p-2'>
                             {/* <th>Image</th> */}
                             <th>Name</th>
+                            <th>FatherName</th>
                             <th>Surname</th>
-                            <th>FaherName</th>
                             <th>Dob.</th>
                             <th>Gender</th>
                             <th>Mobile No.</th>
@@ -72,8 +72,8 @@ function Viewstudent() {
                             data.map((user, index) => {
                                 return <tr>
                                     <td>{user.name}</td>
-                                    <td>{user.surname}</td>
                                     <td>{user.lastname}</td>
+                                    <td>{user.surname}</td>
                                     <td>{user.dob}</td>
                                     <td>{user.gender}</td>
                                     <td>{user.contact_number}</td>

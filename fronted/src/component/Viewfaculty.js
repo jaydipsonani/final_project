@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
-
 function ViewFaculty() {
 
     const [data, setData] = useState([]);
@@ -46,7 +45,7 @@ function ViewFaculty() {
 
         <>
             <div className="bg-white">
-                <div className=' '>
+                <div>
                     <div className='d-flex justify-content-around'>
                         <h3 className='pt-3 text-center fw-bold mx-auto'>Faculty Data </h3>
                         <Link to="/Dashboard" className=' pt-3 me-5'>

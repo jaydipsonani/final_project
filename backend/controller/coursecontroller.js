@@ -23,6 +23,16 @@ exports.select_course = async (req, res) => {
      })
 }
 
+exports.view_course = async (req, res) => {
+
+     var data = await course.find();
+
+     res.status(200).json({
+          status: 'view all courses',
+          data
+     })
+}
+
 exports.delete_course = async (req, res) => {
      v_id = req.params.id;
 

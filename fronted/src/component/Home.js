@@ -96,7 +96,7 @@ const btnhandler=() => {
                         controlId="formBasicPassword"
                       >
                         <Form.Label>Confirm Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" onChange={(e) => {setconfirmPassword (e.target.value)}} />
+                        <Form.Control type="text" placeholder="Password" onChange={(e) => {setconfirmPassword (e.target.value)}} />
                       </Form.Group>
                       <Form.Group
                         className="mb-3"

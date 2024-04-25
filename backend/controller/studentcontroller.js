@@ -1,26 +1,25 @@
 var student = require('../model/studentmodel');
- 
+
 var current_date = new Date;
 
-var month  = current_date.getMonth();
+var month = current_date.getMonth();
 var year = current_date.getFullYear();
 var date = current_date.getDate();
 
-function getinstallments(year, month){
-    return new Date(year, month,0).getDate();
-} 
-             
+function getinstallments(year, month) {
+    return new Date(year, month, 0).getDate();
+}
+
 //create an array of the dates in question
 
-function getpaymentdate(year, startMonth, Month, termmonth, amount ){
-    return Array.from({length: termmonth}, (v, monthset) => {
+function getpaymentdate(year, startMonth, Month, termmonth, amount) {
+    return Array.from({ length: termmonth }, (v, monthset) => {
 
-        const days = getinstallments(year, startMonth + monthset );
+        const days = getinstallments(year, startMonth + monthset);
 
-        if(month <=days){
-            return new Date(year, startMonth +monthset, Month)
-        }else
-        {
+        if (month <= days) {
+            return new Date(year, startMonth + monthset, Month)
+        } else {
             return new Date(year, startMonth + monthset, 0)
         }
     });
@@ -30,14 +29,13 @@ function getpaymentdate(year, startMonth, Month, termmonth, amount ){
 
 const days = [1];
 
-for(let dom of days){
+for (let dom of days) {
     var datee = getpaymentdate(year, month, dom, 10).map(d => d.toLocaleDateString([]))
     var amount = 10000;
     console.log(datee);
 }
 
-for (let i=0;i<10;i++)
-{
+for (let i = 0; i < 10; i++) {
     var install = [datee[i], amount]
     console.log(install);
 }
@@ -45,9 +43,9 @@ for (let i=0;i<10;i++)
 exports.add_student = async (req, res) => {
 
     // req.body.image = req.file.originalname;
-    
+
     req.body.installment = datee;
-  
+
     var data = await student.create(req.body)
 
     res.status(200).json({
@@ -76,7 +74,7 @@ exports.delete_student = async (req, res) => {
     var data = await student.findByIdAndDelete(v_id)
 
     res.status(200).json({
-        status:'delete successfully'
+        status: 'delete successfully'
     })
 }
 
@@ -86,7 +84,7 @@ exports.update_student = async (req, res) => {
     var data = await student.findByIdAndUpdate(v_id, req.body)
 
     res.status(200).json({
-        status:'updated successfully',
+        status: 'updated successfully',
         data
     })
 }

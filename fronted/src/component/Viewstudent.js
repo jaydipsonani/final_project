@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import '../component/css/viewstudent.css'
 import axios from "axios";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
@@ -46,7 +47,7 @@ function Viewstudent() {
                 </div>
             </div>
             <div>
-                <table id='users' className='table'>
+                <table id='users' className='table' border='1px solid black'>
                     <thead>
                         <tr className='p-2'>
                             {/* <th>Image</th> */}

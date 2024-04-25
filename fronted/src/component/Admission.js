@@ -70,7 +70,8 @@ function Add_student() {
 
           <div>
             <div>
-              <h1 className="d-flex justify-content-center" >Admission Form</h1>
+              <h1 className="d-flex  justify-content-center" >Admission Form</h1>
+              <hr className="horizontal"></hr>
 
               {/* name */}
               <div className="form-group mt-3 d-flex gap-3">

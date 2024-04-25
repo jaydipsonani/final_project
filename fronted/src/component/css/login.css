@@ -38,3 +38,9 @@
     font-weight: 600;
     color: rgb(34, 34, 34);
   }
+
+  .input {
+    height: 15px;
+    width: 15px;
+    margin-top: 10px;
+  }

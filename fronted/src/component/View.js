@@ -48,14 +48,12 @@ function View_course() {
                                 {
                                     data.map((user, id) => {
                                         return <> <td>{user.c_name}</td>
-                                            <td>{user.course_fee}</td>
-                                            <td><Button>delete</Button></td>
+                                            <td>{user.content_id.content}</td>
+                                            <td>{user.content_id.course_fee}</td>
                                         </>
                                     })
                                 }
-
                             </tr>
-
                         </tbody>
                     </table>
                 </form>

@@ -9,10 +9,9 @@ function Add_course(){
 
 const navigate = useNavigate(' ')
 
-// let [hello, sethello] = useState('')
 let [course, setcourse] = useState('');
 let [fees, setfees] = useState('');
-let [error, setError] = useState('');
+// let [error, setError] = useState('');
 
 const btnhandler=() => {
   axios.post('http://localhost:5000/course/addcourse',{
@@ -24,7 +23,7 @@ const btnhandler=() => {
   .then(function (response) {
     console.log(response.data);
 
-    if(response.data.status === "succesfully added")
+    if(response.data.status === "successfully added")
     {
       navigate("/Dashboard");
     }

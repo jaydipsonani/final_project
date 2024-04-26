@@ -1,5 +1,4 @@
 import { React } from "react";
-// import { Link } from "react-router-dom";
 import { useEffect, useState } from 'react';
 import './css/viewcourse.css';
 import axios from "axios";
@@ -17,12 +16,12 @@ function View_course() {
                 console.log(response.data);
             })
             .catch(function (error) {
+
                 console.log(error);
             })
     }, [])
 
     const handledelete = (id, e) => {
-
 
         axios.post(`http://localhost:5000/course/deletecourse/` + id)
             .then((res) => {
@@ -55,6 +54,7 @@ function View_course() {
                         <thead>
                             <tr>
                                 <th>course name</th>
+                                <th>content</th>
                                 <th>course fee</th>
                                 <th>Remove Data</th>
                             </tr>
@@ -63,21 +63,10 @@ function View_course() {
                             <tr>
                                 {
                                     data.map((user, id) => {
-                                        {/* return <> <td>{user.c_name}</td>
+                                        return <> <td>{user.c_name}</td>
                                             <td>{user.content_id.content}</td>
                                             <td>{user.content_id.course_fee}</td>
-                                        </> */}
-                                        return <>
-                                            <div className="col-4 ">
-                                                <div class="card w-75 m-1" >
-                                                    <ul class="list-group list-group-flush">
-                                                        <li class="list-group-item">coursename :<span>{user.c_name}</span></li>
-                                                        <li class="list-group-item">fees :<span>{user.course_fee}</span></li>
-
-                                                        <li class="list-group-item"><Button onClick={(e) => handledelete(user._id, e)}>Delete</Button></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+                                            <td><Button onClick={(e) => handledelete(user._id, e)}>Delete</Button></td>
                                         </>
                                     })
                                 }

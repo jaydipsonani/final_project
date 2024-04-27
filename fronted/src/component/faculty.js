@@ -63,11 +63,11 @@ function Faculty() {
             </div>
 
             <div className="form-group mt-3">
-              <label>department</label>
+              <label>salary</label>
               <input
-                type="integer"
+                type="number"
                 className="form-control mt-1"
-                placeholder="department"
+                placeholder="salary"
                 onChange={(e) => { setSalary(e.target.value) }}
               />
             </div>
@@ -83,12 +83,10 @@ function Faculty() {
             <div className="d-grid gap-2 mt-3">
 
               <Link className='btn btn-primary' onClick={btnHandler}>Submit</Link>
-              {/* </button> */}
             </div>
           </div>
         </form>
       </div>
-
     </>
   )
 }

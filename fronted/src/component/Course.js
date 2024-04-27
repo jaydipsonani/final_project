@@ -11,15 +11,13 @@ const navigate = useNavigate(' ')
 
 let [course, setcourse] = useState('');
 let [fees, setfees] = useState('');
-// let [error, setError] = useState('');
 
 const btnhandler=() => {
   axios.post('http://localhost:5000/course/addcourse',{
-
     c_name:course,
     course_fee:fees
   })
-  
+
   .then(function (response) {
     console.log(response.data);
 

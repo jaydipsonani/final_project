@@ -15,22 +15,21 @@ import Viewstudent from './component/Viewstudent';
 function App() {
   return (
     <div className="App main">
-      
-        <Routes>
-          <Route path='/signup' element={<Home/>} ></Route>
-          <Route path='/' element={<Login/>} ></Route>
-          <Route path='/forget' element={<Forget/>} ></Route>
-          <Route path='/addcourse' element={<Course/>}></Route>
-          <Route path='/view' element={<View/>}></Route>
-          <Route path='/Dashboard' element={<Dashboard/>}></Route>
-          <Route path='/Sidebar' element={<Sidebar/>}></Route> 
-          <Route path='/Admission' element={<Admission/>}></Route>
-          <Route path='/faculty' element={<Faculty/>}></Route>
-          <Route path='/viewfaculty' element={<Viewfaculty/>}></Route>
-          <Route path='/viewstudent' element={<Viewstudent/>}></Route>
 
-        </Routes>
-      
+      <Routes>
+        <Route path='/signup' element={<Home />} ></Route>
+        <Route path='/' element={<Login/>} ></Route>
+        <Route path='/forget' element={<Forget />} ></Route>
+        <Route path='/addcourse' element={<Course />}></Route>
+        <Route path='/view' element={<View />}></Route>
+        <Route path='/Dashboard' element={<Dashboard />}></Route>
+        <Route path='/Sidebar' element={<Sidebar />}></Route>
+        <Route path='/Admission' element={<Admission />}></Route>
+        <Route path='/faculty' element={<Faculty />}></Route>
+        <Route path='/viewfaculty' element={<Viewfaculty />}></Route>
+        <Route path='/viewstudent' element={<Viewstudent />}></Route>
+      </Routes>
+
     </div>
   );
 }

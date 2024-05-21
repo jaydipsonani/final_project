@@ -3,8 +3,7 @@ import '../component/css/login.css';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import { FaEye } from "react-icons/fa";
-import { GoEyeClosed } from "react-icons/go";
+
 
 function Login() {
 
@@ -18,7 +17,6 @@ function Login() {
   const show = () => {
     type === "password" ? setType("text") : setType("password");
   }
-
 
   const btnhandler = () => {
     axios.post('http://localhost:5000/login', {

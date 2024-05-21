@@ -81,9 +81,9 @@ function Faculty() {
             </div>
 
             <div className="d-grid gap-2 mt-3">
-
               <Link className='btn btn-primary' onClick={btnHandler}>Submit</Link>
             </div>
+            
           </div>
         </form>
       </div>

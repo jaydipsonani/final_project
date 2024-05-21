@@ -1,7 +1,5 @@
 var mongoose = require('mongoose')
 
-// Schema
-
 var registerSchema = new mongoose.Schema({
     name: {
         type: String,

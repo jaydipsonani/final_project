@@ -6,7 +6,7 @@ exports.add_course = async (req, res) => {
      var data = await course.create(req.body)
 
      res.status(200).json({
-          status: 'succesfully added',
+          status: 'successfully added',
           data
      })
 }

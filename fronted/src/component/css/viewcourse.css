@@ -5,3 +5,6 @@ table, tr, th, td{
 .delete{
     width: 10%;
 }
+.hello:hover{
+    cursor: pointer;
+}

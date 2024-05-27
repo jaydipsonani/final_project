@@ -4,3 +4,9 @@ td,
 th {
   border: 1px solid black;
 }
+.good{
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  margin-top:15px;
+}

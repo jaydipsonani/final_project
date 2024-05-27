@@ -1,263 +1,147 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import '../component/css/forget.css'
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import { forget_password } from "../../../backend/controller/usercontroller";
 
-// function Forget(){
-
-//   let [authmode, setauthmode] = useState("otp")
-//   let [forget_password, setForget_password] = useState('')
-
-//   const changeAuthMode = () => {
-//     setauthmode(authmode === "otp" ? "c_otp":"otp")
-
-//     if(authmode === "c_otp") {
-//       setauthmode(authmode === "c_otp" ? "new-otp" : "otp")
-
-//   }
-// }
-
-// const btnHandler=() => {
-//   axios.post('http://localhost:5000/forget_password',{
-//     forget_password: forget_password
-//   })
-//   .then(function (response) {
-//     console.log(response);
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   })
-
-// }
-
-// console.log(authmode);
-
-//   if(authmode === "otp"){
-
-//   return(
-//     <>
-//     <div className="Auth-form-container main">
-//     <div className="Auth-form">
-//     <div className="Auth-form-content">
-//       <h3 className="Auth-form-title">forget password</h3>
-//       <div className="form-group mt-3">
-//         <label>enter email address</label>
-//         <input
-//           type="email"
-//           onChange={(e) => setForget_password(e.target.value)}
-//           className="form-control mt-1"
-//           placeholder="Enter email"
-//         />
-//       </div>
-  
-//       <div className="d-grid gap-2 mt-3">
-//         <button type="submit" className="btn btn-primary" onClick={btnHandler}>
-//           Submit
-//         </button>
-      
-//       </div>
-//     </div>
-//   </div>
-//   </div>
-//     </>
-//   )
-//   }
-
-//   if(authmode === "new-otp"){
-
-//     return(
-//       <>
-//       <div className="Auth-form-container main">
-//       <div className="Auth-form">
-//       <div className="Auth-form-content">
-//         <h3 className="Auth-form-title">change password</h3>
-//         <div className="form-group mt-3">
-//           <label>Enter new password</label>
-//           <input
-//             type="password"
-//             className="form-control mt-1"
-//             placeholder="enter password"
-//           />
-//         </div>
-//         <div className="form-group mt-3">
-//           <label>repeat password</label>
-//           <input
-//             type="password"
-//             className="form-control mt-1"
-//             placeholder="repeat password"
-//           />
-//         </div>
-    
-//         <div className="d-grid gap-2 mt-3 btn">
-//           {/* <button type="submit" className="btn btn-primary"> */}
-//           <Link to="/login" className="btn btn-primary" >Submit</Link>
-//           {/* </button> */}
-        
-//         </div>
-//       </div>
-//     </div>
-//     </div>
-//       </>
-//     )
-
-//   }
-
-//   return(
-//       <>
-//       <div className="Auth-form-container main">
-//     <div className="Auth-form">
-//       <div className="Auth-form-content">
-//         <h3 className="Auth-form-title">Enter Otp</h3>
-//         <div className="form-group mt-3">
-//           <label>Confirm otp</label>
-//           <input
-//             type="email"
-//             className="form-control mt-1"
-//             placeholder="Enter otp"
-//           />
-//         </div>
-
-//         <div className="d-grid gap-2 mt-3">
-//           <button type="submit" className="btn btn-primary" onClick={changeAuthMode}>
-//             Submit
-//           </button>
-//         </div>
-//       </div>
-//     </div>
-//   </div>
-//       </>
-//   )
-
-
-//  const btnhandler=() => {
-//    axios.post('http://localhost:5000/forget_password',{
-//      forget_password: forget_password
-//    })
-//    .then(function (response) {
-//      console.log(response.data);
-//    })
-//    .catch(function (error) {
-//      console.log(error);
-//    })
-
-//  }
-
-//   return(
-//     <>
-//     <input type="email" onChange={(e) => {setForget_password(e.target.value)}}/>
-//     <button onClick={btnhandler}>submit</button>
-//     </>
-
-//   )
-
-//   }
-
-// export default Forget
-
 function Forget() {
-  const [authMode, setAuthMode] = useState("otp");
-  const [email, setEmail] = useState("");
-  const [otp, setOtp] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [repeatPassword, setRepeatPassword] = useState("");
+  const navigate = useNavigate()
+  let [email, setemail] = useState('');
+  let [otp, setotp] = useState('');
+  let [password, setpassword] = useState('');
+  let [error, setError] = useState('');
 
-  const handleChangeAuthMode = () => {
-    setAuthMode((prevMode) => (prevMode === "otp" ? "new-otp" : "otp"));
-  };
+  let [authmode, setauthmode] = useState("otp")
 
-  const handleForgetPassword = () => {
-    axios
-      .post("http://localhost:5000/forget_password", { email })
-      .then((response) => {
-        console.log(response.data); // Handle the response as needed
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
+  const changeAuthMode = () => {
+    setauthmode(authmode === "otp" ? "c_otp" : "otp")
 
-  const handleChangePassword = () => {
-    // Add logic to handle changing password
-  };
+    axios.post('http://localhost:5000/forget_password', {
+      email: email
 
-  return (
-    <div className="Auth-form-container main">
-      <div className="Auth-form">
-        <div className="Auth-form-content">
-          {authMode === "otp" && (
-            <>
-              <h3 className="Auth-form-title">Forget Password</h3>
+    }).then(function (response) {
+
+      console.log(response);
+
+      if (response.data.status === "success") {
+        // navigate("")
+        alert("successfully sent otp in your register email address")
+        if (authmode === "c_otp") {
+          setauthmode(authmode === "c_otp" ? "new-otp" : "otp")
+        }
+      }
+      else {
+        alert("Check your email address")
+      }
+    }).catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+
+  }
+
+  const changeAuthMode1 = () => {
+    axios.post('http://localhost:5000/check_otp', {
+      email: email,
+      otp: otp,
+      password: password
+
+    }).then(function (response) {
+
+      console.log(response);
+
+      if (response.data.status === "password change successfully") {
+        navigate("/")
+        alert("successfully changed your password")
+
+      }
+      else {
+        alert("Check your otp")
+      }
+    }).catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+
+  }
+
+  if (authmode === "otp") {
+
+    return (
+      <>
+        <div className="Auth-form-container main">
+          <div className="Auth-form">
+            <div className="Auth-form-content">
+              <h3 className="Auth-form-title">forget password</h3>
               <div className="form-group mt-3">
-                <label>Enter Email Address</label>
+                <label>enter email address</label>
                 <input
                   type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  onChange={(e) => setemail(e.target.value)}
                   className="form-control mt-1"
                   placeholder="Enter email"
                 />
               </div>
-              <div className="d-grid gap-2 mt-3">
-                <button
-                  type="button"
-                  className="btn btn-primary"
-                  onClick={handleForgetPassword}
-                >
-                  Submit
-                </button>
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  onClick={handleChangeAuthMode}
-                >
-                  Change Authentication Mode
-                </button>
-              </div>
-            </>
-          )}
 
-          {authMode === "new-otp" && (
-            <>
-              <h3 className="Auth-form-title">Change Password</h3>
-              <div className="form-group mt-3">
-                <label>Enter New Password</label>
-                <input
-                  type="password"
-                  value={newPassword}
-                  onChange={(e) => setNewPassword(e.target.value)}
-                  className="form-control mt-1"
-                  placeholder="Enter new password"
-                />
-              </div>
-              <div className="form-group mt-3">
-                <label>Repeat Password</label>
-                <input
-                  type="password"
-                  value={repeatPassword}
-                  onChange={(e) => setRepeatPassword(e.target.value)}
-                  className="form-control mt-1"
-                  placeholder="Repeat password"
-                />
-              </div>
-              <div className="d-grid gap-2 mt-3 btn">
-                <Link to="/login" className="btn btn-primary">
+              <div className="d-grid gap-2 mt-3">
+                <button type="submit" className="btn btn-primary" onClick={changeAuthMode}>
                   Submit
-                </Link>
-                <button
-                  type="button"
-                  className="btn btn-secondary"
-                  onClick={handleChangeAuthMode}
-                >
-                  Cancel
                 </button>
+
               </div>
-            </>
-          )}
+            </div>
+          </div>
+        </div>
+      </>
+    )
+  }
+
+  return (
+    <>
+      <div className="Auth-form-container main">
+        <div className="Auth-form">
+          <div className="Auth-form-content">
+            <h3 className="Auth-form-title">change password</h3>
+            <div className="form-group mt-3">
+              <label>Enter email</label>
+              <input
+                type="password"
+                onChange={(e) => setemail(e.target.value)}
+                className="form-control mt-1"
+                placeholder="enter password"
+              />
+            </div>
+            <div className="form-group mt-3">
+              <label>enter otp</label>
+              <input
+                type="text"
+                onChange={(e) => setotp(e.target.value)}
+                className="form-control mt-1"
+                placeholder="enter otp"
+              />
+            </div>
+            <div className="form-group mt-3">
+              <label>enter new password</label>
+              <input
+                type="password"
+                onChange={(e) => setpassword(e.target.value)}
+                className="form-control mt-1"
+                placeholder="enter new password"
+              />
+            </div>
+
+            <div className="d-grid gap-2 mt-3 btn">
+              {/* <button type="submit" className="btn btn-primary"> */}
+              <Link className="btn btn-primary" onClick={changeAuthMode1} >Submit</Link>
+              {/* </button> */}
+
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  );
+    </>
+  )
+
 }
 
-export default Forget;
+export default Forget

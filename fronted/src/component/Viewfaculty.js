@@ -9,7 +9,6 @@ function ViewFaculty() {
     const [data, setData] = useState([]);
 
     useEffect(() => {
-
         axios.get('http://localhost:5000/faculty/')
             // .then((res) => setData(res.data))
             // console.log(res)
@@ -27,20 +26,19 @@ function ViewFaculty() {
 
     const handledelete = (id, e) => {
 
-        alert('delete')
+        // alert('delete')
         axios.post(`http://localhost:5000/faculty/delete/` + id)
-            .then((res) => {
-                console.log(res);
+        .then((res) => {
+            console.log(res);
+            if (window.confirm('Are you sure you want to delete?')) {
                 const d = data.filter(item => item._id !== id);
-                setData(d)
+                    setData(d)
+            }
             })
             .catch(function (error) {
-
                 console.log(error);
             })
-
     }
-
     return (
 
         <>

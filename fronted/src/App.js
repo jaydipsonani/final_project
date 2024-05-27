@@ -11,11 +11,11 @@ import Admission from './component/Admission';
 import Faculty from './component/faculty';
 import Viewfaculty from './component/Viewfaculty';
 import Viewstudent from './component/Viewstudent';
+import Updatestudent from './component/Updatestudent';
 
 function App() {
   return (
     <div className="App main">
-
       <Routes>
         <Route path='/signup' element={<Home />} ></Route>
         <Route path='/' element={<Login/>} ></Route>
@@ -28,6 +28,7 @@ function App() {
         <Route path='/faculty' element={<Faculty />}></Route>
         <Route path='/viewfaculty' element={<Viewfaculty />}></Route>
         <Route path='/viewstudent' element={<Viewstudent />}></Route>
+        <Route path='/updatestudent/:id' element={<Updatestudent/>}></Route>
       </Routes>
 
     </div>

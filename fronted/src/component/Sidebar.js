@@ -5,7 +5,7 @@ import './css/sidebar.css'
 import { FaTachometerAlt, FaChartPie, FaTree, FaFile } from "react-icons/fa";
 import { BsFillGrid3X3GapFill } from "react-icons/bs";
 import { BsCircle } from "react-icons/bs";
-import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
+import { MdKeyboardArrowDown } from "react-icons/md";
 import { HiTable } from "react-icons/hi";
 import { Link } from 'react-router-dom';
 // import Dashboard from './Dashboard';
@@ -51,7 +51,7 @@ const Sidebar = () => {
               aria-controls='example-collapse-text'
               aria-expanded={open} className='text-start btn1' >
 
-              <span className=''><FaTachometerAlt className='me-3 fs-5'></FaTachometerAlt>Dashboard <MdOutlineKeyboardArrowLeft className=''></MdOutlineKeyboardArrowLeft></span>
+              <span className=''><FaTachometerAlt className='me-3 fs-5'></FaTachometerAlt>Dashboard <MdKeyboardArrowDown className=''></MdKeyboardArrowDown></span>
             </Button>
             <Collapse in={open}>
               <ul id='example-collapse-text' className='list-unstyled ps-0 text-start'>
@@ -62,7 +62,6 @@ const Sidebar = () => {
             </Collapse>
           </li>
 
-
           <li>
             <Button
               onClick={() => setOpen1(!open1)}
@@ -70,7 +69,7 @@ const Sidebar = () => {
               aria-controls='example-collapse-text'
               aria-expanded={open1} className='text-start colorlayout btn1' >
 
-              <span className=''><FaChartPie className='me-3 fs-5' ></FaChartPie>faculty<MdOutlineKeyboardArrowLeft className=''></MdOutlineKeyboardArrowLeft></span>
+              <span className=''><FaChartPie className='me-3 fs-5' ></FaChartPie>faculty<MdKeyboardArrowDown className=''></MdKeyboardArrowDown></span>
             </Button>
             <Collapse in={open1}>
               <ul id='example-collapse-text' className='list-unstyled ps-0 text-start'>
@@ -87,7 +86,7 @@ const Sidebar = () => {
               aria-controls='example-collapse-text'
               aria-expanded={open2} className='text-start colorlayout btn1' >
 
-              <span className=''><FaFile className='me-3 fs-5'></FaFile>course<MdOutlineKeyboardArrowLeft className=''></MdOutlineKeyboardArrowLeft></span>
+              <span className=''><FaFile className='me-3 fs-5'></FaFile>course<MdKeyboardArrowDown className=''></MdKeyboardArrowDown></span>
             </Button>
             <Collapse in={open2}>
               <ul id='example-collapse-text' className='list-unstyled ps-0 text-start'>
@@ -104,7 +103,7 @@ const Sidebar = () => {
               aria-controls='example-collapse-text'
               aria-expanded={open3} className='text-start colorlayout btn1' >
 
-              <span className='outline-light'><HiTable className='me-3 fs-5' ></HiTable>student<MdOutlineKeyboardArrowLeft className=''></MdOutlineKeyboardArrowLeft></span>
+              <span className='outline-light'><HiTable className='me-3 fs-5' ></HiTable>student<MdKeyboardArrowDown className=''></MdKeyboardArrowDown></span>
             </Button>
             <Collapse in={open3}>
               <ul id='example-collapse-text' className='list-unstyled ps-0 text-start'>

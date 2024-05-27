@@ -4,6 +4,7 @@ import './css/viewcourse.css';
 import axios from "axios";
 import { Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import { MdAutoDelete } from "react-icons/md";
 
 function View_course() {
 
@@ -50,27 +51,29 @@ function View_course() {
                     </div>
                 </div>
                 <form method="get">
-                    <table width="100%" align="center" border="1">
+                    <table width="100%" align="center" border="1px solid black">
                         <thead>
                             <tr>
                                 <th>course name</th>
-                                <th>content</th>
+                                {/* <th>content</th> */}
                                 <th>course fee</th>
                                 <th>Remove Data</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
                                 {
                                     data.map((user, id) => {
-                                        return <> <td>{user.c_name}</td>
-                                            <td>{user.content_id.content}</td>
-                                            <td>{user.content_id.course_fee}</td>
-                                            <td><Button onClick={(e) => handledelete(user._id, e)}>Delete</Button></td>
+                                        return <> 
+                                    <tr>
+                                        <td>{user.c_name}</td>
+                                        <td>{user.course_fee}</td>
+                                            {/* <td>{user.content_id.content}</td>
+                                            <td>{user.content_id.course_fee}</td> */}
+                                            <td><span onClick={(e) => handledelete(user._id, e)}><MdAutoDelete></MdAutoDelete></span></td>
+                                    </tr>
                                         </>
                                     })
                                 }
-                            </tr>
                         </tbody>
                     </table>
                 </form>

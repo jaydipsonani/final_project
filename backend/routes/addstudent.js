@@ -15,8 +15,8 @@ var storage = multer.diskStorage({
 var user = require('../controller/studentcontroller')
 
 router.post('/addstudent', upload.single('image'), user.add_student);
-router.get('/', user.find_student);
-// router.get('/find', user.find_student);
+router.get('/', user.find);
+router.get('/:id', user.find_student);
 router.post('/update/:id', user.update_student);
 router.post('/delete/:id', user.delete_student);
 

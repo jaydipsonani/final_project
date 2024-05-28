@@ -16,13 +16,20 @@ function Forget() {
   const changeAuthMode = () => {
     setauthmode(authmode === "otp" ? "c_otp" : "otp")
 
+    if(!email.trim()){
+      alert("please enter your email")
+      return;
+    }
     axios.post('http://localhost:5000/forget_password', {
       email: email
 
     }).then(function (response) {
 
       console.log(response);
-
+      // if(response.data.data.email === " ")
+      // {
+      //   alert('please enter your email')
+      // }
       if (response.data.status === "success") {
         // navigate("")
         alert("successfully sent otp in your register email address")
@@ -41,6 +48,10 @@ function Forget() {
   }
 
   const changeAuthMode1 = () => {
+    if(!email.trim()){
+      alert("please enter your email")
+      return;
+    }
     axios.post('http://localhost:5000/check_otp', {
       email: email,
       otp: otp,
@@ -105,7 +116,7 @@ function Forget() {
             <div className="form-group mt-3">
               <label>Enter email</label>
               <input
-                type="password"
+                type="email"
                 onChange={(e) => setemail(e.target.value)}
                 className="form-control mt-1"
                 placeholder="enter password"
@@ -132,7 +143,7 @@ function Forget() {
 
             <div className="d-grid gap-2 mt-3 btn">
               {/* <button type="submit" className="btn btn-primary"> */}
-              <Link className="btn btn-primary" onClick={changeAuthMode1} >Submit</Link>
+              <Link className="btn btn-primary text-white" onClick={changeAuthMode1} >Submit</Link>
               {/* </button> */}
 
             </div>

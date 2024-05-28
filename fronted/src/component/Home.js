@@ -104,7 +104,7 @@ const btnhandler=() => {
                       ></Form.Group>
                       <div className="d-grid">
                         {/* <Button variant="primary" type="submit"> */}
-                          <Link className='btn btn-primary' onClick={btnhandler}>
+                          <Link className='btn btn-primary text-white' onClick={btnhandler}>
                           Create Account
                           </Link>
                         {/* </Button> */}

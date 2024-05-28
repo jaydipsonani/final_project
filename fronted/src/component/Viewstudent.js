@@ -11,7 +11,7 @@ function Viewstudent() {
 
     useEffect(() => {
 
-        axios.get('http://localhost:5000/student')
+        axios.get('http://localhost:5000/student/')
             .then(res => setData(res.data.data))
             .catch(function (error) {
                 console.log(error);
@@ -40,7 +40,8 @@ function Viewstudent() {
             <div className=' '>
                 <div className='d-flex'>
                 <div className="good">
-                search:- <input type="text" placeholder="search here" onChange={(e) => setquery(e.target.value)} />
+                <label>Search:-</label>&nbsp;
+                <input type="text" placeholder="search here" onChange={(e) => setquery(e.target.value)} />
                 </div>
                     <h3 className='pt-3 text-center fw-bold mx-auto'>student Data</h3>
                     <Link to="/Dashboard" className=' pt-3 me-5'>

@@ -6,23 +6,19 @@ import axios from 'axios';
 import { Link, useNavigate } from 'react-router-dom';
 // import Header from './Header';
 
-
 const Dashboard = () => {
-
     const navigate = useNavigate(' ')
 
     const btnHandler = () => {
         axios.post('http://localhost:5000/logout', {
-
         })
-
             .then(function (response) {
                 console.log(response.data);
-
+                if (window.confirm('are you sure you want to log out?')) {
                 if (response.data.status === "successfully logged out") {
-                    navigate("/");
+                        navigate("/");
+                    }
                 }
-
             })
             .catch(function (error) {
                 console.log(error);
@@ -51,7 +47,6 @@ const Dashboard = () => {
                     <div className='dashpad d-flex gap-3 pr-2 m-3 '>
                         <Card style={{ width: '14.5rem' }} className='cardcol1 cardtxtcol'>
                             <Card.Body className='main-card'>
-
                                 <Card.Title className='text-start m-2'><h2 className='fontwe'>150</h2></Card.Title>
                                 <Card.Text className='text-start m-2'>
                                     New orders

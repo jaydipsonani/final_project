@@ -12,6 +12,7 @@ import Faculty from './component/faculty';
 import Viewfaculty from './component/Viewfaculty';
 import Viewstudent from './component/Viewstudent';
 import Updatestudent from './component/Updatestudent';
+import Norouter from './component/Norouter';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
         <Route path='/viewfaculty' element={<Viewfaculty />}></Route>
         <Route path='/viewstudent' element={<Viewstudent />}></Route>
         <Route path='/updatestudent/:id' element={<Updatestudent/>}></Route>
+        <Route path='*' element={<Norouter/>}></Route>
       </Routes>
 
     </div>

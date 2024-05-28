@@ -5,7 +5,6 @@ import { useState } from "react";
 import axios from "axios";
 
 function Updatestudent() {
-
     const navigate = useNavigate();
     const id = useParams();
     console.log(id);
@@ -26,54 +25,50 @@ function Updatestudent() {
     let [pc_laptop, setPc_laptop] = useState('')
     let [error, setError] = useState('')
 
-    // useEffect(() => {
-    //     axios.get('http://localhost:5000/student/update/' + id.id)
-    //         .then(res => {
-    //             setData(res.data.data)
-    //             const {data} = res.data;
+    useEffect(() => {
+        axios.get('https://localhost:5000/student/'+id.id)
+        .then((res) =>{
+            // const {data} = res.data;
+                setName(res.data.data.name)
+                setSurname(res.data.data.surname)
+                setLastname(res.data.data.lastname)
+                setDob(res.data.data.dob)
+                setGender(res.data.data.gender)
+                setContact_number(res.data.data.contact_number)
+                setFather_contactnumber(res.data.data.setFather_contactnumber)
+                setAddress(res.data.data.address)
+                setQualification(res.data.data.qualification)
+                setC_name(res.data.data.c_name)
+                setCourse_start_date(res.data.data.setCourse_start_date)
+                setPc_laptop(res.data.data.pc_laptop)
+            })
+            .catch((error) => {
+                console.log(error)
+            })
+        },[])
 
-    //             setName(data.data.name)
-    //             setSurname(data.data.surname)
-    //             setLastname(data.data.lastname)
-    //             setGender(data.data.gender)
-    //             setDob(data.data.dob)
-    //             setContact_number(data.data.contact_number)
-    //             setFather_contactnumber(data.data.father_contactnumber)
-    //             setAddress(data.data.address)
-    //             setQualification(data.data.qualification)
-    //             setC_name(data.data.c_name)
-    //             setCourse_start_date(data.data.course_start_date)
-    //             setPc_laptop(data.data.pc_laptop)
-    //         })
-    //         .catch(function (error) {
-    //             console.log(error);
-    //         })
-    //     }, [id])
-    //     console.log(data)
+        console.log(data)
 
-    const btnupdate = () => {
-        axios.post('http://localhost:5000/student/update/' + id.id, {
-            name: name,
-            surname: surname,
-            lastname: lastname,
-            dob: dob,
-            gender: gender,
-            contact_number: contact_number,
-            father_contactnumber: father_contactnumber,
-            address: address,
-            qualification: qualification,
-            // image: state.base64URL,
-            c_name: c_name,
-            course_start_date: course_start_date,
-            pc_laptop: pc_laptop
-
+    const btnupdate = (id) => {
+        axios.post('http://localhost:5000/student/update/' +id,{
+            name,
+            surname,
+            lastname,
+            dob,
+            gender,
+            contact_number,
+            father_contactnumber,
+            address,
+            qualification,
+            c_name,
+            course_start_date,
+            pc_laptop
         })
             .then(res => {
                 console.log(res.data)
                 if (res.data.status === "updated successfully") {
                     setError(res.data.status);
                     navigate('/viewstudent')
-                    // return false;
                 }
 
             }).catch(function (error) {

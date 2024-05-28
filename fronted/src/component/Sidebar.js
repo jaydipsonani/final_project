@@ -38,7 +38,6 @@ const Sidebar = () => {
                 placeholder="Search"
                 className=""
                 aria-label="Search"
-
               />
               <Button className='bg-dark'><AiOutlineSearch className='text-white fs-4 fw-bold '></AiOutlineSearch></Button>
             </Form>

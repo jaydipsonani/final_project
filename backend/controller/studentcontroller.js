@@ -54,12 +54,19 @@ exports.add_student = async (req, res) => {
     })
 }
 
+exports.find = async (req, res) => {
+    var data = await student.find()
+
+    res.status(200).json({
+        status: 'success',
+        data
+    })
+}
+
 exports.find_student = async (req, res) => {
     var v_id = req.params.id;
-    // var name = req.params.name;
-    // var contact_number = req.params.contact_number;
 
-    var data = await student.find()
+    var data = await student.findById(v_id)
     console.log('id', data);
 
     res.status(200).json({

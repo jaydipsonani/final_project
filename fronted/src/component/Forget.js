@@ -80,6 +80,7 @@ function Forget() {
 
     return (
       <>
+      {console.log("good")}
         <div className="Auth-form-container main">
           <div className="Auth-form">
             <div className="Auth-form-content">

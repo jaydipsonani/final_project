@@ -33,8 +33,9 @@ const btnhandler=() => {
 }
 
     return(
-        <>
-        <Sidebar/>
+      <>
+      {console.log("hello")}
+    <Sidebar/>
     <div className="Auth-form-container main">
       <form className="Auth-form">
         <div className="Auth-form-content">

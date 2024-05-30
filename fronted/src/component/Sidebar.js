@@ -8,11 +8,9 @@ import { BsCircle } from "react-icons/bs";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { HiTable } from "react-icons/hi";
 import { Link } from 'react-router-dom';
-// import Dashboard from './Dashboard';
 
 const Sidebar = () => {
 
-  const [open, setOpen] = useState(false);
   const [open1, setOpen1] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
@@ -28,7 +26,7 @@ const Sidebar = () => {
           </li>
           {/* ------------Logo 2------------- */}
           <li className='border-bottom pt-3 pb-3'>
-            <Link to="/Dashboard"><img className='rounded-circle' src={require('../img/user2.jpg')} width='30px' /><span>Alexander Pierce</span></Link>
+            <Link to="/Dashboard"><img className=' rounded-square' src={require('../img/user2.jpg')} width='30px' /><span className='ms-2'>Alexander Pierce</span></Link>
           </li>
           {/* ------------search------------- */}
           <li className='p-2'>
@@ -42,8 +40,6 @@ const Sidebar = () => {
               <Button className='bg-dark'><AiOutlineSearch className='text-white fs-4 fw-bold '></AiOutlineSearch></Button>
             </Form>
           </li>
-
-
 
           <li>
             <Button
@@ -95,7 +91,6 @@ const Sidebar = () => {
               </ul>
             </Collapse>
           </li>
-
         </ul>
       </div>
     </>

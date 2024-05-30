@@ -60,11 +60,11 @@ function Add_student() {
     <>
       {/* <Sidebar /> */}
       <div className='main_page'>
-
         <div className="container mt-2 p-2 text-start">
         <Link to="/Dashboard" className='d-flex justify-content-end pb-3  ms-1'>
           <Button className='text-start btn btn-dark text-center' >
             <span className='fw-bold'>Dashboard</span>
+      {console.log("hello good")}
           </Button>
         </Link>
 

@@ -29,6 +29,7 @@ const Dashboard = () => {
         <>
             <div className='bg-white'>
                 <Sidebar />
+                {console.log("hello good morning")}
                 <div className='dashcol'>
                     <div className='d-flex dashpad space m-3'>
                         <div>

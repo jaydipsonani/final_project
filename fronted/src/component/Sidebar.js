@@ -42,31 +42,15 @@ const Sidebar = () => {
               <Button className='bg-dark'><AiOutlineSearch className='text-white fs-4 fw-bold '></AiOutlineSearch></Button>
             </Form>
           </li>
-          {/* ------------Dashboard------------- */}
 
-          <li>
-            <Button
-              onClick={() => setOpen(!open)}
-              aria-controls='example-collapse-text'
-              aria-expanded={open} className='text-start btn1' >
 
-              <span className=''><FaTachometerAlt className='me-3 fs-5'></FaTachometerAlt>Dashboard <MdKeyboardArrowDown className=''></MdKeyboardArrowDown></span>
-            </Button>
-            <Collapse in={open}>
-              <ul id='example-collapse-text' className='list-unstyled ps-0 text-start'>
-                <li><Link to='/'><BsCircle className='me-3 fs-6'></BsCircle>Dashboard v1</Link></li>
-                <li><Link to='Dashboard_2'><BsCircle className='me-3 fs-6'></BsCircle>Dashboard v2</Link></li>
-                <li><Link to='Dashboard_3'><BsCircle className='me-3 fs-6'></BsCircle>Dashboard v3</Link></li>
-              </ul>
-            </Collapse>
-          </li>
 
           <li>
             <Button
               onClick={() => setOpen1(!open1)}
               variant="outline-secondary"
               aria-controls='example-collapse-text'
-              aria-expanded={open1} className='text-start colorlayout btn1' >
+              aria-expanded={open1} className='text-start color layout btn1' >
 
               <span className=''><FaChartPie className='me-3 fs-5' ></FaChartPie>faculty<MdKeyboardArrowDown className=''></MdKeyboardArrowDown></span>
             </Button>

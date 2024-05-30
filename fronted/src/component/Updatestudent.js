@@ -28,6 +28,7 @@ function Updatestudent() {
     useEffect(() => {
         axios.get('https://localhost:5000/student/'+id.id)
         .then((res) =>{
+            console.log(res.data)
             // const {data} = res.data;
                 setName(res.data.data.name)
                 setSurname(res.data.data.surname)

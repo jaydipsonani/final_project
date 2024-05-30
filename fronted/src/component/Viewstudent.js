@@ -10,13 +10,11 @@ function Viewstudent() {
     // console.log(data.filter((em) => em.name.includes("hello")))
 
     useEffect(() => {
-
         axios.get('http://localhost:5000/student/')
             .then(res => setData(res.data.data))
             .catch(function (error) {
                 console.log(error);
             })
-
     }, []);
 
     var handledelete = (id, e) => {
